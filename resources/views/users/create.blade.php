@@ -5,13 +5,13 @@
         @include('layouts.alert', ['errors' => $errors])
         <div class="row">
         <div class="col-sm">
-            <form action="http://localhost/users" method="post">
-                <input type="hidden" name="_token" value="mhHCzSBrO4sEgiYFpeCsm9Ytfk9MGrDmvUuweScH">
-                <input type="hidden" name="_method" value="POST">
+            <form action="{{ url('create_new')  }}" method="post">
+                @csrf
 
                 <div class="form-group">
+                    @if($errors->has('name'))<span>{{ $errors->first('name') }}</span>@endif
                     <label for="name">氏名</label>
-                    <input type="text" class="form-control " id="name" name="name" value="">
+                    <input type="text" class="form-control " id="name" name="name" value="{{ old('name') }}">
                 </div>
 
                 <ul class="list-inline">
