@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function create(){
+    public function create()
+    {
 
         return view('users.create');
     }
 
-    public function new(User $user, UserNewRequest $request){
+    public function new(User $user, UserNewRequest $request)
+    {
 
         $user->fill($request->all())->save();
 
@@ -25,14 +27,16 @@ class UserController extends Controller
 
     }
 
-    public function list(){
+    public function list()
+    {
 
         $list =  DB::table('users')->get();
 
         return view('users.list', compact('list'));
     }
 
-    public function details($id){
+    public function details($id)
+    {
 
         $user = DB::table('users')
             ->select('id','name')
@@ -42,7 +46,8 @@ class UserController extends Controller
         return view('users.details', compact('user'));
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
 
         $user = DB::table('users')
             ->select('name','id')
@@ -52,7 +57,8 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(UpdateUserRequest $request, $id){
+    public function update(UpdateUserRequest $request, $id)
+    {
 
         DB::table('users')
             ->where('id', $id)
@@ -61,7 +67,8 @@ class UserController extends Controller
         return redirect('list');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
 
         $user = User::find($id);
         $user->delete();
