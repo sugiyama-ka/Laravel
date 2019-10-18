@@ -26,7 +26,7 @@
                     <a class="nav-link {{ strpos(Request::url(), url('books')) !== false ? 'active' : null }}" href="{{ url('books') }}">書籍</a>
                 </li>
                 <li class="nav-item header_font">
-                    <a class="nav-link">ユーザー</a>
+                    <a class="nav-link" href="{{ url('list') }}">ユーザー</a>
                 </li>
 
             </ul>
