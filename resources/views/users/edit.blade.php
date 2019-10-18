@@ -5,8 +5,10 @@
 <main class="container py-3">
         <div class="row">
         <div class="col-sm">
-            <form action=" {{ url('update', $user->id) }} " method="post">
+            <form action=" {{ url('users/'.$user->id) }} " method="post">
                 @csrf
+                {{ method_field('PUT') }}
+
 
                 @include('layouts.alert', ['errors' => $errors])
 
@@ -17,7 +19,7 @@
 
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="{{ url('list') }}" class="btn btn-secondary" >キャンセル</a>
+                        <a href="{{ url('users') }}" class="btn btn-secondary" >キャンセル</a>
                     </li>
                     <li class="list-inline-item">
                         <button type="submit" class="btn btn-primary">更新</button>

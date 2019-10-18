@@ -12,12 +12,12 @@
                     <a href="http://localhost/users" class="btn btn-light">戻る</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="{{ url('edit', $user->id)  }}" class="btn btn-success">編集</a>
+                    <a href="{{ url('users/'.$user->id.'/edit')  }}" class="btn btn-success">編集</a>
                 </li>
                 <li class="list-inline-item">
-                    <form action="{{ url('delete', $user->id) }}" method="get">
-                        <input type="hidden" name="_token" value="mhHCzSBrO4sEgiYFpeCsm9Ytfk9MGrDmvUuweScH">
-                        <input type="hidden" name="_method" value="DELETE">
+                    <form action="{{ url('users/'.$user->id) }}" method="POST">
+                        @csrf
+                        {{ method_field('DELETE') }}
                         <button type="submit" class="btn btn-danger">削除</button>
                     </form>
                 </li>

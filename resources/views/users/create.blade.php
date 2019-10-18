@@ -5,7 +5,7 @@
         @include('layouts.alert', ['errors' => $errors])
         <div class="row">
         <div class="col-sm">
-            <form action="{{ url('create_new')  }}" method="post">
+            <form action="{{ url('users')  }}" method="post">
                 @csrf
 
                 <div class="form-group">
@@ -15,7 +15,7 @@
 
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="{{ url('list') }}" class="btn btn-secondary">キャンセル</a>
+                        <a href="{{ url('users') }}" class="btn btn-secondary">キャンセル</a>
                     </li>
                     <li class="list-inline-item">
                         <button type="submit" class="btn btn-primary">作成</button>

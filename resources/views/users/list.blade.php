@@ -8,7 +8,7 @@
         <div class="col-sm">
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a href="{{ url('create') }}" class="btn btn-success">新規</a>
+                    <a href="{{ url('users/create') }}" class="btn btn-success">新規</a>
                 </li>
             </ul>
         </div>
@@ -27,7 +27,7 @@
                 <tbody>
                     <tr>
                         <td class="text-center">{{ $user->id }}</td>
-                        <td><a href=" {{ url('details', $user->id) }} ">{{ $user->name }}</a></td>
+                        <td><a href=" {{ url('users/'.$user->id) }} ">{{ $user->name }}</a></td>
                     </tr>
                 </tbody>
                 @endforeach
