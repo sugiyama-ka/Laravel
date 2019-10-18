@@ -26,3 +26,15 @@ Route::resource('books', 'BookController') は 以下のルーティングをま
 +--------+-----------+-------------------+---------------+---------------------------------------------+--------------+
 */
 Route::resource('books', 'BookController');
+
+//user
+Route::get('create', '\App\Http\Controllers\UserController@create')->name('create');
+Route::post('create_new',  'UserController@new')->name('create_new');
+
+Route::get('list', 'UserController@list')->name('list');
+Route::get('details/{id}', 'UserController@details')->name('details');
+
+Route::get('edit/{id}', 'UserController@edit')->name('edit');
+Route::post('update/{id}', 'UserController@update')->name('update');
+Route::get('delete/{id}', 'UserController@delete')->name('delete');
+
