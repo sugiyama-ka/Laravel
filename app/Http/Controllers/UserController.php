@@ -18,16 +18,16 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function new(User $user, UserNewRequest $request)
+    public function store(User $user, UserNewRequest $request)
     {
 
         $user->fill($request->all())->save();
 
-        return redirect('list');
+        return redirect('users');
 
     }
 
-    public function list()
+    public function index()
     {
 
         $list =  DB::table('users')->get();
@@ -35,7 +35,7 @@ class UserController extends Controller
         return view('users.list', compact('list'));
     }
 
-    public function details($id)
+    public function show($id)
     {
 
         $user = DB::table('users')
@@ -64,16 +64,16 @@ class UserController extends Controller
             ->where('id', $id)
             ->update(['name' => $request->name]);
 
-        return redirect('list');
+        return redirect('users');
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
 
         $user = User::find($id);
         $user->delete();
 
-        return redirect('list');
+        return redirect('users');
 
     }
 }
