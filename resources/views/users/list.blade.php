@@ -8,7 +8,7 @@
         <div class="col-sm">
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a href="http://localhost/users/create" class="btn btn-success">新規</a>
+                    <a href="{{ url('create') }}" class="btn btn-success">新規</a>
                 </li>
             </ul>
         </div>
