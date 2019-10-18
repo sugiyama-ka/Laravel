@@ -9,14 +9,13 @@
                 @csrf
 
                 <div class="form-group">
-                    @if($errors->has('name'))<span>{{ $errors->first('name') }}</span>@endif
                     <label for="name">氏名</label>
                     <input type="text" class="form-control " id="name" name="name" value="{{ old('name') }}">
                 </div>
 
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="http://localhost/users" class="btn btn-secondary">キャンセル</a>
+                        <a href="{{ url('list') }}" class="btn btn-secondary">キャンセル</a>
                     </li>
                     <li class="list-inline-item">
                         <button type="submit" class="btn btn-primary">作成</button>
