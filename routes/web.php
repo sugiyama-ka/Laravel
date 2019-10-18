@@ -26,3 +26,9 @@ Route::resource('books', 'BookController') は 以下のルーティングをま
 +--------+-----------+-------------------+---------------+---------------------------------------------+--------------+
 */
 Route::resource('books', 'BookController');
+
+//user
+Route::resource('users', 'UserController');
+
+
+
