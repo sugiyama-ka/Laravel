@@ -29,7 +29,6 @@ Route::resource('books', 'BookController');
 
 Route::resource('users', 'UserController');
 
-
 Route::get('comments/index', 'CommentController@index')->name('comments_index');
 Route::get('comments/create/{book_id}', 'CommentController@create')->name('comment_create');
 Route::post('comments/store/{book_id}', 'CommentController@store')->name('comment_store');
