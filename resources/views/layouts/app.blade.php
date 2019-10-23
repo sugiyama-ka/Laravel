@@ -28,6 +28,9 @@
                 <li class="nav-item header_font ">
                     <a class="nav-link text-right" href="{{ url('users') }}">ユーザー</a>
                 </li>
+                <li class="nav-item header_font ">
+                    <a class="nav-link text-right" href="{{ route('comments_index') }}">コメント</a>
+                </li>
 
             </ul>
         </div>
