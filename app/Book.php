@@ -21,4 +21,13 @@ class Book extends Model
 {
     // fillable はモデルからテーブルのどのカラムの変更を許可するかを指定する。
     protected $fillable = ['title', 'publisher', 'price', 'overview'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
+
