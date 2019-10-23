@@ -25,7 +25,7 @@
 
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a href="http://localhost/" class="btn btn-secondary">キャンセル</a>
+                            <a href="{{ route('comments_index') }}" class="btn btn-secondary">キャンセル</a>
                         </li>
                         <li class="list-inline-item">
                             <button type="submit" class="btn btn-primary">投稿</button>
