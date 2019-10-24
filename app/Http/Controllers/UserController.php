@@ -7,7 +7,6 @@ use App\Http\Requests\UpdateUserRequest;
 use App\User;
 use Illuminate\Support\Facades\DB;
 
-
 class UserController extends Controller
 {
     public function create()
@@ -28,13 +27,10 @@ class UserController extends Controller
         } else {
             $path = "";
         }
-
         User::create(['icon' => basename($path),
             'name' => $request->name,
         ]);
-
         return redirect('users');
-
     }
 
     /**
@@ -43,9 +39,7 @@ class UserController extends Controller
 
     public function index()
     {
-
         $list = DB::table('users')->get();
-
         return view('users.list', compact('list'));
     }
 
@@ -56,12 +50,10 @@ class UserController extends Controller
 
     public function show(int $id)
     {
-
         $user = DB::table('users')
             ->select('id', 'name')
             ->where('id', '=', $id)
             ->first();
-
         return view('users.details', compact('user'));
     }
 
@@ -72,14 +64,11 @@ class UserController extends Controller
 
     public function edit(int $id)
     {
-
         $isicon = User::find($id)->icon;
-
         $user = DB::table('users')
             ->select('name', 'id', 'icon')
             ->where('id', '=', $id)
             ->first();
-
         return view('users.edit', compact('user', 'isicon'));
     }
 
@@ -90,16 +79,13 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, int $id)
     {
-
         if ($request->icon === null) {
-
             $icon = User::find($id)->icon;
             DB::table('users')
                 ->where('id', $id)
                 ->update(['name' => $request->name,
                     'icon' => $icon
                 ]);
-
             return redirect('users');
         } else {
             if ($request->file('icon')->isValid([])) {
@@ -127,5 +113,4 @@ class UserController extends Controller
         return redirect('users');
     }
 }
-
 

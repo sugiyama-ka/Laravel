@@ -14,31 +14,32 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
-        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
+    <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="navbar-collapse offcanvas-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link {{ strpos(Request::url(), url('books')) !== false ? 'active' : null }}" href="{{ url('books') }}">書籍</a>
-                </li>
-                <li class="nav-item header_font ">
-                    <a class="nav-link text-right" href="{{ url('users') }}">ユーザー</a>
-                </li>
-                <li class="nav-item header_font ">
-                    <a class="nav-link text-right" href="{{ route('comments_index') }}">コメント</a>
-                </li>
+    <div class="navbar-collapse offcanvas-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link {{ strpos(Request::url(), url('books')) !== false ? 'active' : null }}"
+                   href="{{ url('books') }}">書籍</a>
+            </li>
+            <li class="nav-item header_font ">
+                <a class="nav-link text-right" href="{{ url('users') }}">ユーザー</a>
+            </li>
+            <li class="nav-item header_font ">
+                <a class="nav-link text-right" href="{{ route('comments_index') }}">コメント</a>
+            </li>
 
-            </ul>
-        </div>
-    </nav>
+        </ul>
+    </div>
+</nav>
 
-    @yield('content')
+@yield('content')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

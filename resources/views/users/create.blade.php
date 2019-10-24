@@ -32,5 +32,3 @@
     </main>
 
 @endsection
-
-

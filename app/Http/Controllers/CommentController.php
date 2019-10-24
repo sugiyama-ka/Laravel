@@ -17,7 +17,6 @@ class CommentController extends Controller
     public function index()
     {
         $books = Book::orderBy('id', 'asc')->get();
-
         return view('comments.index', compact('books'));
     }
 
@@ -30,7 +29,6 @@ class CommentController extends Controller
     public function create(int $book_id)
     {
         $users = User::all();
-
         return view('comments.create', compact('users', 'book_id'));
     }
 
@@ -48,7 +46,6 @@ class CommentController extends Controller
             'user_id' => $request->user,
             'message' => $request->message,
         ]);
-
         return redirect('comments/index');
     }
 

@@ -8,5 +8,3 @@ class User extends Model
 {
     protected $fillable = ['name', 'id', 'icon'];
 }
-
-

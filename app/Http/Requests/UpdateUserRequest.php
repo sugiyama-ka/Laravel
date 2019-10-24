@@ -34,5 +34,4 @@ class UpdateUserRequest extends FormRequest
             'required' => '入力必須です。',
         ];
     }
-
 }
